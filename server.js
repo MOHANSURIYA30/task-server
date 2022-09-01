@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose');
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 const adminRoutes = require('./routes/admin');
 const employeeRoutes = require('./routes/employee');
@@ -8,8 +8,18 @@ const taskRoutes = require('./routes/task');
 
 
 const app = express()
+// mongoose.connect("mongodb://localhost:27017/management", err =>{
+//     if(err)
+//     {
+//         console.log("Cannot connect to db!!!!!");
+//     }
+//     else
+//     {
+//         console.log("Connected to DB");
+//     }
+// });
 
-mongoose.connect("mongodb://localhost:27017/management", err =>{
+mongoose.connect("mongodb+srv://mohansuriya:MOHANsuriya%4022@cluster0.ynygxca.mongodb.net/test", err =>{
     if(err)
     {
         console.log("Cannot connect to db!!!!!");
